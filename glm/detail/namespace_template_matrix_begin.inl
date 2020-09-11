@@ -1,0 +1,7 @@
+#define constructor GLM_CALL_FUNC(constructor, GLM_MATRIX_TYPENAME(C, R, T, Q))
+#define identity GLM_CALL_FUNC(identity, GLM_MATRIX_TYPENAME(C, R, T, Q))
+#define matrixCompMult GLM_CALL_FUNC(matrixCompMult, GLM_MATRIX_TYPENAME(C, R, T, Q))
+#define outerProduct GLM_CALL_FUNC(outerProduct, GLM_MATRIX_TYPENAME(C, R, T, Q))
+#define determinant GLM_CALL_FUNC(determinant, GLM_MATRIX_TYPENAME(C, R, T, Q))
+#define inverse GLM_CALL_FUNC(inverse, GLM_MATRIX_TYPENAME(C, R, T, Q))
+#define transpose GLM_CALL_FUNC(transpose, GLM_MATRIX_TYPENAME(C, R, T, Q))

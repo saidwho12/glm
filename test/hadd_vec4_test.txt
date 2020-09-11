@@ -1,0 +1,54 @@
+// -O0
+Average time for 1000 iterations of 1000000 operations of hadd_vec4_c: 9419.144531
+Average time for 1000 iterations of 1000000 operations of hadd_vec4_sse1_1: 7724.411133
+Average time for 1000 iterations of 1000000 operations of hadd_vec4_sse1_2: 7916.154785
+Average time for 1000 iterations of 1000000 operations of hadd_vec4_sse3_1: 7385.064941
+Average time for 1000 iterations of 1000000 operations of hadd_vec4_sse3_2: 9346.791992
+
+// -O1
+Average time for 1000 iterations of 1000000 operations of hadd_vec4_c: 1473.561035
+Average time for 1000 iterations of 1000000 operations of hadd_vec4_sse1_1: 6806.622070
+Average time for 1000 iterations of 1000000 operations of hadd_vec4_sse1_2: 5558.766113
+Average time for 1000 iterations of 1000000 operations of hadd_vec4_sse3_1: 6718.333984
+Average time for 1000 iterations of 1000000 operations of hadd_vec4_sse3_2: 8731.593750
+
+// -O2
+Average time for 1000 iterations of 1000000 operations of hadd_vec4_c: 1551.102051
+Average time for 1000 iterations of 1000000 operations of hadd_vec4_sse1_1: 7303.868164
+Average time for 1000 iterations of 1000000 operations of hadd_vec4_sse1_2: 5967.321777
+Average time for 1000 iterations of 1000000 operations of hadd_vec4_sse3_1: 7178.165039
+Average time for 1000 iterations of 1000000 operations of hadd_vec4_sse3_2: 9264.018555
+
+// -O3
+Average time for 1000 iterations of 1000000 operations of hadd_vec4_c: 1536.927979
+Average time for 1000 iterations of 1000000 operations of hadd_vec4_sse1_1: 7312.030762
+Average time for 1000 iterations of 1000000 operations of hadd_vec4_sse1_2: 6274.398926
+Average time for 1000 iterations of 1000000 operations of hadd_vec4_sse3_1: 7254.875977
+Average time for 1000 iterations of 1000000 operations of hadd_vec4_sse3_2: 8884.993164
+
+// hadd_vec4_sse1_2 -O3 loop code
+.LVL14:
+.LBB5:
+        movl    $0, -16(%rbp)   #, i
+.LVL15:
+        jmp     .L5       #
+.L6:
+        movl    -16(%rbp), %eax # i, tmp127
+        sall    $2, %eax        #, _17
+        movl    %eax, %eax      # _17, _18
+        leaq    0(,%rax,4), %rdx        #, _19
+        movq    -24(%rbp), %rax # data, tmp128
+        addq    %rdx, %rax      # _19, _20
+        movq    %rax, %rdi      # _20,
+        call    hadd_vec4_sse1_2        #
+.LVL16:
+        addl    $1, -16(%rbp)   #, i
+.LVL17:
+.L5:
+        cmpl    $99999, -16(%rbp)       #, i
+        jbe     .L6       #,
+
+
+// hadd_vec4_c -O3 loop code
+
+
