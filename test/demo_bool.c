@@ -6,8 +6,8 @@
 
 int main(int argc, char *argv[])
 {
-    glm_vec2 v1 = { 2.63f, 8.54f };
-    glm_vec2 v2 = { 1.81f, 11.2f };
+    glm_vec2 v1 = glm_vec2(2.63f, 8.54f);
+    glm_vec2 v2 = glm_vec2(1.81f, 11.2f);
     
     glm_bvec2 v3 = glm_lessThan(v1, v2);
     
@@ -21,7 +21,7 @@ int main(int argc, char *argv[])
     
     glm_print("bvec4({bvec2}, {bvec2}) -> {bvec4}\n\n", v3, v4, v5);
     
-    glm_bvec4 v6 = { true, true, false, false };
+    glm_bvec4 v6 = glm_bvec4(true, true, false, false);
     
     glm_bvec4 v7 = glm_and(v5, v6);
     
